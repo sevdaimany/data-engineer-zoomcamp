@@ -4,7 +4,7 @@
 echo "Running data ingestion for January 2021..."
 
 docker run -it --rm \
-  --network=pg-network \
+  --network=pipeline_default \ # docker network name for docker-compose is pipeline_default, not pg-network
   taxi_ingest:v001 \
   --year=2021 \
   --month=1 \
